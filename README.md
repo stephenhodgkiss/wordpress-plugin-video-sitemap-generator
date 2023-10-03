@@ -9,3 +9,8 @@ Installation:
 2. If cloned, compress the folder into a zip file.
 3. Upload the plugin folder to the /wp-content/plugins/ directory OR upload the zip file via the WordPress admin panel under PLUGINS > Add New > Upload Plugin.
 4. Activate the plugin through the 'Plugins' menu in WordPress.
+
+After the first run you can examine the sitemap_videos.xml in the root director, or view it in the browser e.g. [https://](https://stevehodgkiss.net/sitemap_videos.xml)https://stevehodgkiss.net/sitemap_videos.xml
+
+Submit it to search engines such as Google:
+https://search.google.com/search-console/
