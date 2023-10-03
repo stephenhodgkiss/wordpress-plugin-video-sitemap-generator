@@ -10,7 +10,7 @@ Installation:
 3. Upload the plugin folder to the /wp-content/plugins/ directory OR upload the zip file via the WordPress admin panel under PLUGINS > Add New > Upload Plugin.
 4. Activate the plugin through the 'Plugins' menu in WordPress.
 
-After the first run you can examine the sitemap_videos.xml in the root director, or view it in the browser e.g. [https://](https://stevehodgkiss.net/sitemap_videos.xml)https://stevehodgkiss.net/sitemap_videos.xml
+After the first run you can examine the sitemap_videos.xml in the root director, or view it in the browser e.g. https://stevehodgkiss.net/sitemap_videos.xml
 
-Submit it to search engines such as Google:
+Submit it to search engines such as Google under the Sitemap menu:
 https://search.google.com/search-console/
