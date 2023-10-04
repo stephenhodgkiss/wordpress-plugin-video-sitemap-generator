@@ -2,16 +2,18 @@
 # Video Sitemap Generator for WordPress
 
 Description:
-The Video Sitemap Generator for WordPress is a powerful plugin designed to simplify the process of optimizing your website for search engines, specifically Google. This plugin automates the task of scanning your published posts for video embeds, ensuring that your valuable video content gets the visibility it deserves.
+The Video Sitemap Generator for WordPress is a powerful plugin designed to simplify the process of optimizing your website for search engines, specifically Google.
+This plugin automates the task of scanning your published posts for video embeds, ensuring that your valuable video content gets the visibility it deserves.
 
 Key Features:
-Automated Video Detection: Our plugin effortlessly scans your published posts to identify and categorize video embeds, saving you time and effort.
+Automated Video Detection: My plugin effortlessly scans your published posts to identify and categorize video embeds, saving you time and effort.
 Google Sitemap Integration: Generate a structured video sitemap that adheres to Google's guidelines, making it easier for search engines to index your video content.
 SEO Optimization: Improve your website's SEO by ensuring that your video content is discoverable, resulting in higher rankings and increased organic traffic.
 
 Important: Only scans for embdedded YouTube videos within an iframe, but this can be amended as necessary.
 
-By using the Video Sitemap Generator for WordPress, you can harness the full potential of your video content, helping it reach a wider audience and improving your website's search engine performance. Enhance your SEO strategy today and boost your website's visibility on Google with our easy-to-use plugin.
+By using the Video Sitemap Generator for WordPress, you can harness the full potential of your video content, helping it reach a wider audience and improving your
+website's search engine performance. Enhance your SEO strategy today and boost your website's visibility on Google with our easy-to-use plugin.
 
 --------------------
   
