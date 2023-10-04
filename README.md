@@ -1,4 +1,5 @@
 # wordpress-plugin-video-sitemap-generator
+# Video Sitemap Generator for WordPress
 
 Description:
 The Video Sitemap Generator for WordPress is a powerful plugin designed to simplify the process of optimizing your website for search engines, specifically Google. This plugin automates the task of scanning your published posts for video embeds, ensuring that your valuable video content gets the visibility it deserves.
