@@ -9,12 +9,24 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */
 
+/**
+ * Extracts youtube embedded videos only.
+ * Runs once when activated and then every 12 hours.
+ * 
+ * Installation:
+ * 1. clone the repo using git clone https://github.com/stephenhodgkiss/wordpress-plugin-video-sitemap-generator.git OR download the zip file.
+ * 2. If cloned, compress the folder into a zip file.
+ * 3. Upload the plugin folder to the /wp-content/plugins/ directory OR upload the zip file via the WordPress admin panel under PLUGINS > Add New > Upload Plugin.
+ * 4. Activate the plugin through the 'Plugins' menu in WordPress.
+ */
+
 // Schedule the video scan every 12 hours
 function schedule_video_scan()
 {
     if (!wp_next_scheduled('video_scan_event')) {
-        wp_schedule_event(time(), '12hours', 'video_scan_event');
+        wp_schedule_event(time(), 'twicedaily', 'video_scan_event');
     }
+
 }
 add_action('wp', 'schedule_video_scan');
 
@@ -53,7 +65,7 @@ function scan_posts_for_videos()
             $excerpt = strip_tags($content); // Remove HTML tags.
             $excerpt = wp_trim_words($excerpt, 200); // Adjust the word count as needed.
             // remove &hellip; from the end of the excerpt
-            $excerpt = preg_replace('/&hellip;/', '', $excerpt);
+            $excerpt = preg_replace('/&hellip;/', ' ...', $excerpt);
             $title = get_the_title(); // Use post title as the video title
             $description = $excerpt; // Use post excerpt as the video description
 
@@ -66,8 +78,13 @@ function scan_posts_for_videos()
                 foreach ($post_tags as $tag) {
                     $tags[] = $tag->name;
                 }
-                $video_tags = implode(', ', $tags);
+                $video_tags = implode(',#', $tags);
             }
+
+            // replace ' ' with '' in $video_tags
+            $video_tags = str_replace(' ', '', $video_tags);
+            // replace ',#' with ', ' in $video_tags
+            $video_tags = str_replace(',#', ', ', $video_tags);
 
             // Store video data in the array
             $video_data[] = array(
@@ -89,13 +106,15 @@ function scan_posts_for_videos()
 
     wp_reset_postdata();
 }
+add_action('video_scan_event', 'scan_posts_for_videos');
 
 function generate_video_sitemap($video_data)
 {
 
-
     // Create the sitemap XML
     $sitemap = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+    // add a timestamp to the sitemap
+    $sitemap .= '<!-- Created with WordPress Video Sitemap Generator by Steve Hodgkiss - ' . date('Y-m-d H:i:s') . ' -->' . PHP_EOL;
     $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ';
     $sitemap .= 'xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">' . PHP_EOL;
 
@@ -126,7 +145,6 @@ function generate_video_sitemap($video_data)
     // Save the sitemap to a file
     file_put_contents(ABSPATH . 'sitemap_videos.xml', $sitemap);
 }
-add_action('video_scan_event', 'scan_posts_for_videos');
 
 // Register activation hook
 register_activation_hook(__FILE__, 'video_sitemap_activation');
