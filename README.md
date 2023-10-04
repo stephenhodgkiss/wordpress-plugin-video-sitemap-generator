@@ -7,8 +7,11 @@ This plugin automates the task of scanning your published posts for video embeds
 
 Key Features:
 Automated Video Detection: My plugin effortlessly scans your published posts to identify and categorize video embeds, saving you time and effort.
+
 Google Sitemap Integration: Generate a structured video sitemap that adheres to Google's guidelines, making it easier for search engines to index your video content.
+
 SEO Optimization: Improve your website's SEO by ensuring that your video content is discoverable, resulting in higher rankings and increased organic traffic.
+
 Schedule: Configured to run automatically every 12 hours under the WP Cron.
 
 Important: Only scans for embdedded YouTube videos within an iframe, but this can be amended as necessary.
